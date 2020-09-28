@@ -1,0 +1,18 @@
+﻿.parent_menu{
+    background-color:black;
+    color:white;
+    width:100px;
+    height:30px;
+    line-height:30px;
+}
+.child_menu {
+    background-color: black;
+    color: white;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    margin:5px;
+}
+.hover_menu{
+    background-color:darkred;
+}

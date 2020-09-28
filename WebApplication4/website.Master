@@ -1,0 +1,122 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="website.master.cs" Inherits="WebApplication4.website" %>
+
+<%@ Register Src="~/FragUserControl.ascx" TagPrefix="uc1" TagName="FragUserControl" %>
+
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <style>
+        .container{
+            width:1200px;
+            height:900px;
+        }
+        .top1{
+            width:1200px;
+            height:35px;
+            background-color:#000000;
+            text-decoration-color:white;  
+        }
+        .top2{
+            width:1200px;
+            height:50px;
+            background-color:#983434;
+            text-decoration-color:white;   
+        }
+       /* .logo{
+            width:300px;
+            height:150px;
+            float:left;}
+        */
+        .search{
+              width:700px;
+            height:100px;
+            float:left;
+             display: block;
+            margin: 50px 0 0 50px;
+            width:380px;
+             border-radius:50px;  
+        }
+        .cart{
+              width:200px;
+            height:150px;
+            float:right;  
+        }
+        .navbar{
+             width:1200px;
+            height:70px;
+            float:left;
+             background-color:#eecc11;
+        }
+        .content1 {
+             width:1200px;
+            height:895px;
+            float:left;
+        }
+       
+        .auto-style1 {
+            width: 700px;
+            height: 37px;
+            float: left;
+            display: block;
+            margin: 48px 0 0 50px;
+            width: 473px;
+            border-radius: 50px;
+        }
+       
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="container">
+        <div class="top1">
+       <label  style="Color:White;text-align:start;font-size:12px;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; About Us&nbsp;&nbsp;&nbsp;&nbsp; Contact&nbsp;&nbsp;&nbsp;&nbsp; Support&nbsp;&nbsp;&nbsp;&nbsp; FAQ&nbsp;&nbsp;&nbsp;&nbsp; returns&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; </label>   
+            <asp:Button BackColor="Black"  ForeColor="White"  style="text-align:end" ID="CmdAddProduct" runat="server" Text="Add Product" OnClick="CmdAddProduct_Click" CssClass="offset-sm-0" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <asp:Button  BackColor="Black" ForeColor="White"  style="text-align:end" ID="CmdSignIn" runat="server" Text="Sign In" OnClick="CmdSignIn_Click" />
+          <asp:Button  BackColor="Black" ForeColor="White"  style="text-align:end" ID="CmdSignUp" runat="server" Text="Sign Up" OnClick="CmdSignUp_Click" />&nbsp;&nbsp;&nbsp
+            
+        </div>
+            <div  class="top1" style="Color:White;text-align:center;font-size:12px;background-color:#eb0a0a">
+                Your orders are completely safe with us. In order to fight global pandemic covid-19 we are following every guidelines by Govt of India.<br />
+Happy shopping !
+            </div>
+           <div> <uc1:FragUserControl runat="server" id="FragUserControl" />
+               </div>
+       <%-- <div class="logo">
+             
+          <%--  <img src="images/sss%20logo.jpg" style="height: 141px; width: 296px" />--%>
+       
+        <div class="auto-style1">
+              <asp:TextBox  ID="TxtSearch" Text="" Width="359px" height="26px"  runat="server"  placeholder="Search, Category, Brand and Products" ></asp:TextBox>
+              <asp:Button BackColor="Black" ForeColor="White" ID="cmdSearch"  runat="server" Text="Search" Height="32px" OnClick="cmdSearch_Click" Width="75px"  />
+        </div>
+        <div class="cart">
+            &nbsp;<img src="images/icon%20cart.png" style="height: 150px; width: 192px;margin-left:30px"/></div>
+        <div class="navbar">
+             <asp:ContentPlaceHolder ID="NavContent" runat="server">
+
+                </asp:ContentPlaceHolder>
+
+            <asp:Button ID="CmdCheckOut" BackColor="Black"  ForeColor="White" runat="server" Text="CheckOut"  style="text-align:end;" OnClick="CmdCheckOut_Click" />
+            
+        </div>
+        <div class="content1">
+            <asp:ContentPlaceHolder ID="ChildContent" runat="server">
+
+                </asp:ContentPlaceHolder>
+        </div>
+       
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+            </div>
+    </form>
+</body>
+</html>
